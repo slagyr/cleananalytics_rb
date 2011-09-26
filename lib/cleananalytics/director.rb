@@ -23,6 +23,10 @@ module Cleantracker
       @models = options[:models] || Models.new
     end
 
+    def chart_list
+      CHARTS.keys.sort
+    end
+
     def login_scene_ready(view)
       @view = view
     end
