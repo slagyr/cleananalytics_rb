@@ -21,10 +21,11 @@ module Cleantracker
       @curl = options[:curl] || Curl.new
       @view = options[:view]
       @models = options[:models] || Models.new
+      @client = options[:client]
     end
 
     def chart_list
-      CHARTS.keys.sort
+      CHARTS.keys.map { |key| key.to_s }.sort
     end
 
     def login_scene_ready(view)
